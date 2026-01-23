@@ -116,11 +116,14 @@ public:
         temp->next = newNode;
     }
 
-    int search(int key) {
-        Node* temp = head;
+    int search(int key)
+    {
+        Node *temp = head;
         int idx = 0;
-        while(temp != NULL) {
-            if(temp->data == key) {
+        while (temp != NULL)
+        {
+            if (temp->data == key)
+            {
                 return idx;
             }
             temp = temp->next;
@@ -156,8 +159,7 @@ int main()
     ll.printLL();
 
     int result = ll.search(2);
-    cout << "Value at Index :- " <<  result << " ";
-    
+    cout << "Value at Index :- " << result << " ";
 
     // ll.push_back(4);
     // ll.printLL();
