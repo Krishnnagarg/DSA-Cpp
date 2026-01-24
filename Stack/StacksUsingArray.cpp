@@ -1,56 +1,80 @@
-// Using Array/Vector
-
 #include <iostream>
-#include <vector> // in array uses vector for dynamic array / size
 using namespace std;
+#define MAX 5
 
 class Stack
 {
-    vector<int> v;
+    int arr[MAX];
+    int top;
 
 public:
+    Stack()
+    {
+        top = -1;
+    }
+
     void push(int val)
     {
-        v.push_back(val);
+        if (top == MAX - 1)
+        {
+            cout << "Stack Overflow" << endl;
+            return;
+        }
+        top++;
+        arr[top] = val;
     }
 
     void pop()
     {
-        if( v.empty()) {
-            cout << "Stack UnderFlow" << endl;
+        if (top == -1)
+        {
+            cout << "Stack UnderFlow";
             return;
         }
-        v.pop_back();
+        top--;
     }
 
-    int top() // top/peek() 
+    void peek()
     {
-        if( v.empty()) {
-            cout << "Stack is Empty" ;
-            return -1;
+        if (top == -1)
+        {
+            cout << "Stack is Empty";
+            return;
         }
-        return v.back();
+        cout << "Stack Top Value is :- " << arr[top];
     }
 
-    bool empty()
+    void display()
     {
-        return v.size() == 0;
+        if (top == -1)
+        {
+            cout << "Stack is Empty";
+            return;
+        }
+        for (int i = top; i >= 0; i--)
+        {
+            cout << arr[i] << endl;
+        }
+        cout << endl;
     }
 };
 
 int main()
 {
     Stack s;
-
     s.push(10);
     s.push(20);
     s.push(30);
+    s.push(40);
+    s.push(50);
+    s.push(60); //Stack Overflow Show 
 
-    while( !s.empty()) {
-        cout << s.top() << " ";
-        s.pop();
-    }
+    s.display(); 
 
-    cout << endl;
+    s.pop();
+    s.display();
+
+    s.peek();
+
     return 0;
 }
