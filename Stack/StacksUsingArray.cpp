@@ -1,7 +1,7 @@
 // Using Array/Vector
 
 #include <iostream>
-#include <vector>
+#include <vector> // in array uses vector for dynamic array / size
 using namespace std;
 
 class Stack
@@ -25,6 +25,10 @@ public:
 
     int top() // top/peek() 
     {
+        if( v.empty()) {
+            cout << "Stack is Empty" ;
+            return -1;
+        }
         return v.back();
     }
 
