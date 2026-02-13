@@ -10,7 +10,7 @@ int main () {
     s.push(40);
 
     while(!s.empty()) {
-        cout << s.top() << " ";
+        cout << s.top() << " "; // 40 30 20 10
         s.pop();
     }
 

@@ -13,7 +13,7 @@ int main()
     dq.push_front(5); // 5 1 2 3 4
 
     dq.pop_back(); // 5 1 2 3 
-    cout << dq.front() << " " << dq.back() << " ";
+    cout << dq.front() << " " << dq.back() << " "; // 5 3
 
     return 0;
 }

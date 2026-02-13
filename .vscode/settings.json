@@ -2,5 +2,6 @@
     "C_Cpp.default.compilerPath": "C:/MinGW/bin/g++.exe",
     "cSpell.words": [
         "partion"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "disabled"
 }

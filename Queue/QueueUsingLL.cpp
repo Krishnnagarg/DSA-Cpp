@@ -27,18 +27,19 @@ public:
         head = tail = NULL;
     }
 
-    void push(int val) // O(1)
+    void push(int val) // O(1)  push means enqueue
     {
         Node *newNode = new Node(val);
         if (empty())
         {
             head = tail = newNode;
+            return;
         }
         tail->next = newNode;
         tail = newNode;
     }
 
-    void pop() // O(1)
+    void pop() // O(1)    pop means dequeue
     {
         if (empty())
         {
@@ -49,8 +50,8 @@ public:
         head = head->next;
         delete temp;
     }
-
-    int front()
+ 
+    int front()   // O(1) 
     {
         if (empty())
         {
